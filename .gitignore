@@ -1,0 +1,38 @@
+# 1. コンパイル済みのバイナリおよびビルド出力ディレクトリ
+# IDEの自動コンパイル結果やMaven/Gradleのビルドアーティファクトを除外します。
+/target/
+/bin/
+*.class
+
+# 2. Eclipse および STS3 のローカルメタデータ・プロジェクト設定
+# 開発者間のIDE環境の差異によるコンフリクトを防止するため、追跡対象から除外します。
+.metadata/
+.settings/
+.project
+.classpath
+*.prefs
+.factorypath
+
+# 3. OSレベルの一時ファイルおよびシステム生成ファイル
+# WindowsおよびmacOS環境から自動生成される不要なインデックスファイルを除外します。
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# 4. ログファイルおよびランタイムの一時データ
+*.log
+*.sql.bak
+*.swp
+
+# 5. パッケージファイル (必要に応じて除外設定を解除)
+# デプロイメント用のアーカイブファイルは基本的にリポジトリに含めません。
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
