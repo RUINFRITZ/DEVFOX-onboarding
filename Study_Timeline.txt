@@ -1,12 +1,29 @@
 学習スケジュール
 
-260403 : 260330から Java, JSP/JSTL, SQL, 全体的な復習をしました。Spring MVCの概念勉強を始めました。
+┌260406 : 毎日「www.e-typing.ne.jp」でタイピング練習を始めました。
+  - 今、最高レベル:B+ / スコア:192pt / WPM:222.17 / 正確率:95.3% / ミス入力数:13
+  
+└
+
+┌260403 : 260330から Java, JSP/JSTL, SQL, 全体的な復習をしました。Spring MVCの概念勉強を始めました。
   - JSPを利用してCBQ「情報処理産業技師」と掲示板を作りました。
   - JSTLで会員登録から初めてJOIN式活用と画面に情報をどのように表示するのかをかんがえました。
   - Oracleの「INSERT, DELETE, UPDATE, SELECT」構文とSELECT式のJOINを復習してJSPプログラムを作成しました。
   - NEWLECTURE : DI(Dependency Injection)とIoC(Inversion of Control)の概念学習をしました。 
+└
 
-260329 : 学習計画書を作成つるために、様々な講義を探して見ました。
+┌260331 : 情報処理産業技師実習
+  - Eclise4.4, Java 8, Tomcat(8), DBMS(Oracle11gXE)を利用して既出問題
+  - Oracle SQL Developer, Eclipse : ojdbc8, JSP
+└
+
+┌260330 : JSL チーム プロジェクトをAWSに配布する実習を進行しました。
+  - DDL & ER-Dに関する設計のディテールを勉強しました。 // SOFT_DELETE, 検索INDEX
+  - メールアドレスやニックネームの重複を防ぐために、DDL作成時に必ずUNIQUE制約条件を明記
+│
+└所感 : ディテールな仕様書を作成すると、開発の全体のフローが見やすくになることをわかりました。
+
+┌260329 : 学習計画書を作成つるために、様々な講義を探して見ました。
   - Spring BootとJPAの追加勉強のためにこの講義を選びました。
     - "inflearn Spring Boot & JPA" : https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8-JPA-%ED%99%9C%EC%9A%A9-1/dashboard?cid=324119
   - 既存の五月の計画を四月まて総合して終えた後、五月にわ「React JS」と 「TypeScript」を集中的に勉強する計画に変えました。
@@ -15,20 +32,21 @@
 │
 └所感 : 週末にゆっくり考えながら未来の勉強について検討しました。
 
+┌260328 : フィドーバックを反映し学習計画を全面直しました。
+└
 
-260328 : フィドーバックを反映し学習計画を全面直しました。
-
-260327 : 最初の報告 / Git Page Setting for PDF
+┌260327 : 最初の報告 / Git Page Setting for PDF
   - 要求仕様書を基づいてSpring MVC Project生成
 
   * Spring Security 予習 : https://kedric-me.tistory.com/entry/Spring-Password-Encoder-%EB%B9%84%EB%B0%80%EB%B2%88%ED%98%B8-%EC%95%94%ED%98%B8%ED%99%94
+└
 
-260326 : JSL26期チームプロゼクト発表
+┌260326 : JSL26期チームプロゼクト発表
   - 要求仕様書 作成
 │
 └所感 : チーム長を務めて発表の全体を日本語で進行しました。繰り返し練習した成果があり、最後の質疑まで落ち着いてうまくまとめることができました。
 
-260325 : 開発環境構築
+┌260325 : 開発環境構築
   - STSで Spring Framework(Spring MVC Project) プロジェクト 生成
     * 問題発生 : 最新STS(4.31.0)には"Spring MVC Project"がなし。
       - STS(3.9.18)とJava(11)を再インストル // STS.iniに "-vm \n C:\Program Files\Java\jdk-11\bin\javaw.exe" 追加
@@ -39,7 +57,7 @@
 │
 └所感 : 外部の日程でゆっくり勉強する時間がたりなくても自らの開発勉強を少しでもしようと思っておりました。
 
-260324 : AWS Account Setting, Prepare 研修院 チーム プロジェクト Presentation(3月26日 予定)
+┌260324 : AWS Account Setting, Prepare 研修院 チーム プロジェクト Presentation(3月26日 予定)
   - EC2 Instance 生成「IP : 3.39.233.74:8888 / ON 03.24.」 // 日本語設定で進行、amazon-linux-2023 6.1(新しいものを勉強するためです。)
   - セキュリティ : インバウンドのルールを編集画面で直接確認。
     1. カスタム TCP(8888) 追加
