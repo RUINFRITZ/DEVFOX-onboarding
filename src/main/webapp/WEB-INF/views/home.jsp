@@ -65,11 +65,11 @@
 		 <h4><c:if test="${pageMaker.searchWord!=''}">"${pageMaker.searchWord}" 検索結果</c:if></h4>
 		 <table>
 		 	<tr>
-		 		<th>No.</th>
-		 		<th>タイトル</th>
-		 		<th>ビューズ</th>
-		 		<th>作成者</th>
-		 		<th>作成日</th>
+		 		<th style = "width : 50px;">No.</th>
+		 		<th style = "width : 450px;">タイトル</th>
+		 		<th style = "width : 95px;">ビューズ</th>
+		 		<th style = "width : 222px;">作成者</th>
+		 		<th style = "width : 100px;">作成日</th>
 				<th>
 					<sec:authorize access="isAuthenticated()">
 						<input type="button" style = "padding : 4px;" onclick ="location.href='/board/write'" value = "記事作成"/>
@@ -78,7 +78,7 @@
 		 	</tr>
 		 	<c:forEach var="i" items="${list}">
 		 		<tr style ="cursor : pointer;" onclick="location.href='/board/view/${i.post_id}?searchType=${pageMaker.searchType}&searchWord=${pageMaker.searchWord}&pageNum=${pageMaker.pageNum}&pageAmount=${pageMaker.pageAmount}'">
-		 			<td>${i.post_id}</td>
+		 			<td style = "text-align : center;">${i.post_id}</td>
 		 			<td>${i.title}</td>
 		 			<td style="text-align : center;">${i.views}</td>
 		 			<td>${i.email}</td>
