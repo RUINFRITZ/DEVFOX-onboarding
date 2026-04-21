@@ -97,14 +97,25 @@ public class MemberController {
 		dto.setEmail(req.getParameter("email"));
 		dto.setNickname(req.getParameter("nickname"));
 		
-		String enpass = passwordEncoder.encode(req.getParameter("password"));
-		dto.setPassword(enpass);
+		if(req.getParameter("password").equals(req.getParameter("password2"))) {
+			String enpass = passwordEncoder.encode(req.getParameter("password"));
+			dto.setPassword(enpass);
+		} else {
+			rttr.addAttribute("msg", "ERROR_NOTEQPWD");
+			System.out.println("ERROR_NOTEQPWD");
+			return "redirect:/join";
+		}
 		
 		try {
-			mMemberService.memberInsertService(dto);
-			rttr.addAttribute("msg", "JOIN_SUCCESS");
+			if(mMemberService.memberInsertService(dto) > 0) {
+				rttr.addAttribute("msg", "JOIN_SUCCESS");
+				return "redirect:/login";
+			} else {
+				rttr.addAttribute("msg", "ERROR_NOTEMAIL");
+				System.out.println("ERROR_NOTEMAIL");
+				return "redirect:/join";
+			}
 			
-			return "redirect:/login";
 		} catch (Exception e) {
 			rttr.addAttribute("msg", "ERROR_DUPLICATE");
 			

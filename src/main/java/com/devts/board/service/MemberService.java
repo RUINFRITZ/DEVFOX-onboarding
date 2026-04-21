@@ -14,9 +14,20 @@ public class MemberService {
 	@Resource(name = "com.devts.board.mapper.MemberMapper")
 	MemberMapper mMemberMapper;
 	
+	private boolean isValidEmail(String email) {
+		String emailRegularExpression = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
+		
+		return email.matches(emailRegularExpression);
+	}
+	
 	// 会員を登録しなす。
 	public int memberInsertService(MemberDto member) {
-		return mMemberMapper.memberInsert(member);
+		if(isValidEmail(member.getEmail())) {
+			return mMemberMapper.memberInsert(member);
+		} else {
+			return -1;
+		}
+		
 	}
 	
 	// メンバーのメールの重複を確認します。

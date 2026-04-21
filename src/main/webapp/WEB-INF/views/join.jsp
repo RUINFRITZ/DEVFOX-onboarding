@@ -79,8 +79,14 @@
 			$("#email").focus();
 		} else if (msg === "JOIN_SUCCESS") {
 			alert(" - ありがとうございます。ログインしてください。");
+		} else if (msg === "ERROR_NOTEMAIL") {
+			alert(" * メールの形式でわありません。");
+			$("#email").focus();
+		} else if (msg === "ERROR_NOTEQPWD") {
+			alert(" * パスワード入力が一致しません。");
+			$("#password").focus();
 		}
-	})
+ 	})
 </script>
 
 </head>
