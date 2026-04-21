@@ -159,11 +159,19 @@
 		$(function() {
 			$('#emcheck').on('click', function() {
 				const emailVal = $('#email').val().trim();
+				const regexEmail = /^[a-zA-Z0-9]([-_.]?[a-zA-Z0-9])*@[a-zA-Z0-9]([-_.]?[a-zA-Z0-9])*\.[a-zA-Z]{2,5}$/i
+				
 				if(emailVal === '') {
 					alert(" * メールを入力してください。");
 					$('#email').focus();
 					return false;
 				}
+				
+				if(!regexEmail.test(emailVal)) {
+					$('#emcheckmsg').html("<b style = 'color : red'>メールアドレスの形式に合わせて正確に入力してください。</b>");
+					$('#email').focus();
+					return false;
+				} 
 				
 				$.ajax({
 					url: '/emailcheck',

@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
-0
+
 <%@ page session="true" %>
 
 <html>
@@ -32,7 +32,7 @@
 	
 	table, th, td { border : 1px solid #888; }
 	
-	table { margin : 0 auto; width : 800px; }
+	table { margin : 0 auto; width : 1000px; }
 		
 </style>
 </head>
@@ -66,10 +66,10 @@
 		 <table>
 		 	<tr>
 		 		<th style = "width : 50px;">No.</th>
-		 		<th style = "width : 450px;">タイトル</th>
-		 		<th style = "width : 95px;">ビューズ</th>
+		 		<th style = "width : 800px;">タイトル</th>
+		 		<th style = "width : 75px;">Views</th>
 		 		<th style = "width : 222px;">作成者</th>
-		 		<th style = "width : 100px;">作成日</th>
+		 		<th style = "width : 222px;">作成日</th>
 				<th>
 					<sec:authorize access="isAuthenticated()">
 						<input type="button" style = "padding : 4px;" onclick ="location.href='/board/write'" value = "記事作成"/>
