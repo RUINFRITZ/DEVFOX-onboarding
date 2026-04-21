@@ -5,7 +5,6 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<security:http>
-		<security:csrf disabled="true" />
 	
 		<security:intercept-url pattern="/" access="permitAll" />
 		<security:intercept-url pattern="/mypage" access="hasAuthority('USER')" />
