@@ -118,7 +118,7 @@
 		 		<tr>
 		 			<th style = "width : 100px;">ディテール</th>
 		 			<td style = "width : 85px;">Views : ${view.views}</td>
-		 			<td style = "width : 222px;">作成者 : ${view.email}</td>
+		 			<td style = "width : 300px;">作成者 : ${view.email}</td>
 		 			<td style = "width : 248px;">作成日時 : <fmt:formatDate var="resultCreated" value="${view.created_at}" pattern="yyyy-MM-dd HH:mm:ss"/>${resultCreated}</td>
 		 			<td style = "width : 248px;">修正日時 : <fmt:formatDate var="resultUpdated" value="${view.updated_at}" pattern="yyyy-MM-dd HH:mm:ss"/>${resultUpdated}</td>
 		 		</tr>
@@ -168,11 +168,11 @@
 	
 						<sec:authorize access="isAnonymous()">
 				 			<div>
-				 				<label style = "padding : 15px">作成者</label><input type = "text" style = "border : 1px solid #ccc; border-radius : 15px; width : 75%; height : 40px; margin : 10px; padding : 10px;" id = "comment_writer" name = "comment_writer" value="ログインが必要な機能です。" READONLY>
+				 				<label style = "padding : 15px">作成者</label><input type = "text" style = "border : 1px solid #ccc; border-radius : 15px; width : 82%; height : 40px; margin : 10px; padding : 10px;" id = "comment_writer" name = "comment_writer" value=" * ログインが必要な機能です。" READONLY>
 				 			</div>
 						</sec:authorize>
 		 			<div>
-		 				<label style = "padding : 15px">コメント内容</label><textarea style = "border : 1px solid #ccc; border-radius : 15px; width : 88%; height : 80px; margin : 10px; padding : 10px;" id = "comment_content" name = "comment_content"></textarea>
+		 				<label style = "padding : 15px">コメント内容</label><textarea style = "border : 1px solid #ccc; border-radius : 15px; width : 92%; height : 80px; margin : 10px; padding : 10px;" id = "comment_content" name = "comment_content"></textarea>
 		 			</div>
 		 			<sec:authorize access="isAuthenticated()">
 			 			<div style = "float:right; padding:10px;">

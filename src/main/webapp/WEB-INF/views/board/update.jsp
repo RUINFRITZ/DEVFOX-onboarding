@@ -80,7 +80,7 @@
 		 			<th>タイトル</th>
 			 		<td colspan = "3">
 			 			<input type="hidden" name="post_id" id="post_id" value="${view.post_id}">
-			 			<input type="text" name="title" id="title" value="${view.title}">
+			 			<input type="text" name="title" id="title" style = "width : 98%;" value="${view.title}">
 			 		</td>
 		 		</tr>
 		 		<tr>
