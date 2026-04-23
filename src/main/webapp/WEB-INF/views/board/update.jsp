@@ -92,9 +92,7 @@
 		 		<tr>
 		 			<th>コンテンツ</th>
 		 			<td colspan = "3" style ="height : 222px;">
-		 				<textarea name="content" id="content" rows="8">
-		 					${view.content}
-		 				</textarea>
+		 				<textarea name="content" id="content" rows="16" style = "width : 98%;">${view.content}</textarea>
 		 			</td>
 		 		</tr>
 		 		<tr>
