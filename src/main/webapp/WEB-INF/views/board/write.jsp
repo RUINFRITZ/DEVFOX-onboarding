@@ -31,7 +31,7 @@
 	
 	table, th, td { border : 1px solid #888; }
 	
-	table { margin : 0 auto; width : 880px; }
+	table { margin : 0 auto; width : 1000px; }
 
 	
 </style>
@@ -83,15 +83,15 @@
 		 <form name="write" method="post" action="/board/write.do" onsubmit="function check()">
 		 	<table>
 		 		<tr>
-		 			<th>タイトル</th>
+		 			<th style = "width : 100px;">タイトル</th>
 			 		<td>
 			 			<input type="hidden" name="email" id="email" value=<sec:authentication property="principal.username" />>
-			 			<input type="text" size = "96px" name="title">
+			 			<input type="text" style = "width : 98%;" name="title">
 			 		</td>
 		 		</tr>
 		 		<tr>
 		 			<th>コンテンツ</th>
-		 			<td><input type="text" size = "96px" style="height : 222px" name="content"></td>
+		 			<td><textarea name="content" id="content" rows="16" style = "width : 98%;">${view.content}</textarea>
 		 		</tr>
 		 		<tr>
 					<td colspan="2" style ="text-align : center; gap = 80px;">

@@ -33,7 +33,7 @@
 	
 	table, th, td { border : 1px solid #888; }
 	
-	table { margin : 0 auto; width : 880px; }
+	table { margin : 0 auto; width : 1000px; }
 
 	
 </style>
@@ -116,20 +116,23 @@
 			 		</td>
 		 		</tr>
 		 		<tr>
-		 			<th>ディテール</th>
-		 			<td>ビューズ : ${view.views}</td>
-		 			<td>作成者 : ${view.email}</td>
-		 			<td>作成日時 : <fmt:formatDate var="resultCreated" value="${view.created_at}" pattern="yyyy-MM-dd HH:mm:ss"/>${resultCreated}</td>
-		 			<td>修正日時 : <fmt:formatDate var="resultUpdated" value="${view.updated_at}" pattern="yyyy-MM-dd HH:mm:ss"/>${resultUpdated}</td>
+		 			<th style = "width : 100px;">ディテール</th>
+		 			<td style = "width : 85px;">Views : ${view.views}</td>
+		 			<td style = "width : 222px;">作成者 : ${view.email}</td>
+		 			<td style = "width : 248px;">作成日時 : <fmt:formatDate var="resultCreated" value="${view.created_at}" pattern="yyyy-MM-dd HH:mm:ss"/>${resultCreated}</td>
+		 			<td style = "width : 248px;">修正日時 : <fmt:formatDate var="resultUpdated" value="${view.updated_at}" pattern="yyyy-MM-dd HH:mm:ss"/>${resultUpdated}</td>
 		 		</tr>
 		 		<tr>
 		 			<th>コンテンツ</th>
-		 			<td colspan = "4" style ="height : 222px;">${view.content}</td>
+		 			<td colspan = "4" style ="height : 222px;">
+		 				<textarea name="content" id="content" rows="16" style = "width : 98%;" READONLY>${view.content}</textarea>
+		 			</td>
 		 		</tr>
 		 		<tr>
-					<td colspan="5" style ="text-align : center; gap = 80px;">
+					<td colspan="2" style ="text-align : center;">
 						<input type = "button" value = "リスト" onclick="location.href='/'">
-						
+					</td>
+					<td colspan="1" style ="text-align : center;">
 						<sec:authorize access="isAuthenticated()">
 							<form name="del" method="post" action="/board/delete/${view.post_id}" onsubmit="return isDeWriter()">
 								<input type = "hidden" name = "${_csrf.parameterName}" value = "${_csrf.token}" >
@@ -137,7 +140,10 @@
 								<input type = "hidden" name = "user" value = "<sec:authentication property="principal.username" />" >
 								<input type = "submit" value = "デリート">
 							</form>
-							
+						</sec:authorize>
+					</td>
+					<td colspan="2" style ="text-align : center;">							
+						<sec:authorize access="isAuthenticated()">
 							<form name="udt" method="post" action="/board/update/${view.post_id}" onsubmit="return isUpWriter()">
 								<input type = "hidden" name = "${_csrf.parameterName}" value = "${_csrf.token}" >
 								<input type = "hidden" name = "writer" value = "${view.email}" >
@@ -168,9 +174,11 @@
 		 			<div>
 		 				<label style = "padding : 15px">コメント内容</label><textarea style = "border : 1px solid #ccc; border-radius : 15px; width : 88%; height : 80px; margin : 10px; padding : 10px;" id = "comment_content" name = "comment_content"></textarea>
 		 			</div>
-		 			<div style = "float:right; padding:10px;">
-						<button id ="registCommentBtn" style = "height : 48px; width : 64px; border-radius : 22px;">保存</button>
-		 			</div>
+		 			<sec:authorize access="isAuthenticated()">
+			 			<div style = "float:right; padding:10px;">
+							<button id ="registCommentBtn" style = "height : 48px; width : 64px; border-radius : 22px;">保存</button>
+			 			</div>
+		 			</sec:authorize>
 		 			<br><br><br>
 		 		</div>
 		 		<br>
@@ -289,7 +297,7 @@
 								console.log("Current Login User : ", loginUser);
 		 						
 		 						if(list == null || list.length == 0){
-		 							commentUL.html("<li style='padding : 10px; text-align : center;'>登録されたコメントがありません。</li>");
+		 							commentUL.html("<li style='padding : 8px; text-align : center;'>登録されたコメントがありません。</li>");
 		 							return;
 		 						}
 		 						
@@ -306,7 +314,7 @@
 		 							str += "<li id='comment_item_" + list[i].comment_id + "' style='border : 1px solid #ccc; border-radius : 4px; margin-bottom : 10px;'>";
 		 							str += "<div style = 'padding : 10px;'>作成者 : <strong> " + list[i].email + "</strong><small style='float : right;'>";
 		 							str += "作成日時 : " + formattedDate + "</small></div>";
-		 							str += "<p id='content_text_" + list[i].comment_id + "' style = 'padding : 10px; margin : 0;'>" + list[i].content + "</p>";
+		 							str += "<p id='content_text_" + list[i].comment_id + "' style = 'text-align : left; padding : 10px; margin-left : 22px;'>" + list[i].content + "</p>";
 									
 		 							if(loginUser.trim().toLowerCase() === list[i].email.trim().toLowerCase()) {
 			 							str += "<div><input type = 'button' onclick='commentUpdate(" + list[i].comment_id + ", `" + list[i].content + "`)' value = 'モディファイ' style = 'float : right; width : 100px; height : 32px; border-radius : 22px; margin-right : 16px; cursor : pointer;'>"
